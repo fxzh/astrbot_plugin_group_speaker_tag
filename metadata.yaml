@@ -1,0 +1,19 @@
+name: astrbot_plugin_group_speaker_tag
+display_name: 群聊发言人标注
+short_desc: 群聊共享上下文中为当前触发的 @ 消息标注发言人（昵称/时间），让 bot 分得清谁在说话
+desc: 群聊不隔离对话（全群共享上下文）时，内置「群聊上下文感知」只给历史消息加 [昵称/时间] 标注，当前触发的 @ 消息本身是匿名的，模型分不清谁在说话。本插件挂载 on_llm_request 钩子，把当前消息改写为 [昵称/时间] 消息（前缀格式可在 WebUI 插件配置中自定义），与内置历史标注格式一致，模型看到一份连续带身份的群聊记录。内置「用户识别」(provider_settings.identifier) 开启时本插件自动让位、关闭后自动恢复，无需重载
+help: '安装后自动生效，无需指令。标注格式在 WebUI → 插件管理 → 本插件 → 配置 中修改（可用变量 nickname/user_id/time/message）。建议同时开启内置「群聊上下文感知」（内置负责背景消息，本插件负责当前消息）；若开启内置「用户识别」(provider_settings.identifier)，本插件自动让位，关闭后自动恢复。仅群聊生效，私聊不标注。'
+version: v1.1.0
+author: "fengxue"
+repo: https://github.com/fxzh/astrbot_plugin_group_speaker_tag
+social_link: https://github.com/fxzh
+astrbot_version: ">=3.5.0"
+category: 聊天
+support_platforms:
+  - qq_official
+  - aiocqhttp
+tags:
+  - 群聊
+  - 发言人标注
+  - 共享上下文
+  - 用户识别

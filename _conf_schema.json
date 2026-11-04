@@ -1,0 +1,8 @@
+{
+  "format": {
+    "description": "发言人标注格式（仅群聊中触发 LLM 的消息生效）",
+    "type": "string",
+    "default": "[{nickname}/{time}] {message}",
+    "hint": "占位符：{nickname}=发言人昵称，{user_id}=发言人QQ号/ID，{time}=时间(HH:MM:SS)，{message}=原消息内容。默认格式与内置「群聊上下文感知」的历史标注 [昵称/时间] 一致，模型看到的是一份统一的群聊记录"
+  }
+}
